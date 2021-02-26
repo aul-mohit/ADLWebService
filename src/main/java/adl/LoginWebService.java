@@ -5,13 +5,11 @@ import static org.testng.Assert.assertEquals;
 import java.util.HashMap;
 import java.util.Map;
 
-import io.restassured.RestAssured;
-import io.restassured.path.json.JsonPath;
-import io.restassured.response.Response;
-import org.codehaus.jettison.json.JSONObject;
-
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+
+import io.restassured.RestAssured;
+import io.restassured.response.Response;
 
 public class LoginWebService extends mian {
 
@@ -32,13 +30,11 @@ public class LoginWebService extends mian {
 		jsonAsMap.put("remember", "false");
 		Response response = null;
 		try {
-			response = RestAssured.given().header("Content-Type", "application/json").
-					body(jsonAsMap).when()
+			response = RestAssured.given().header("Content-Type", "application/json").body(jsonAsMap).when()
 					.post("https://qainternal.api.aulcorp.com/login");
 		} catch (Exception e) {
 			System.out.println(e.toString());
 		}
-
 		int statusCode = response.getStatusCode();
 
 		if (inputArray[4].toLowerCase().equals("valid"))

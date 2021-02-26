@@ -31,7 +31,6 @@ Reports/*
 ##############################
 target/
 pom.xml.tag
-testng.xml
 pom.xml.releaseBackup
 pom.xml.versionsBackup
 pom.xml.next
